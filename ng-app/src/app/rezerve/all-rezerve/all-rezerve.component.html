@@ -1,0 +1,61 @@
+<div class="container">
+  <h2 style="font-family: 'Times New Roman', serif; margin-left: 10%;">Tüm Rezervasyonlar</h2>
+  <input style="width: 30%; margin-left: 10%;" type="text" [(ngModel)]="searchTerm" placeholder="Kullanıcı adı ile ara..." class="form-control mb-3">
+  <table class="table table-striped">
+    <thead>
+      <tr  style="text-align: center;">
+        <th>ID</th>
+        <th>Rezervasyon Sahibi</th>
+        <th>Bilet Bilgileri</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody  style="text-align: center;">
+      <tr *ngFor="let cart of filteredCarts()">
+        <input type="hidden" name="" [value]="cart.userId" [(ngModel)]="cart.userId">
+        <td>{{ cart.cartId }}</td>
+        <td *ngFor="let user of cart.userItemsModels">{{ user.userName }}</td>
+        <td>
+          <div *ngFor="let item of cart.cartItems.slice(0, 2)">
+            <div class="row">
+              <div class="col-md-3" >{{ item.outGoing }} </div>
+              <div class="col-md-1" ><div class="ikon"><i class="fa-solid fa-arrow-right-long"></i></div></div>
+              <div class="col-md-3" >{{ item.inComing }}</div>
+              <div class="col-md-4">({{ convertToDate(item.time) | date:'yyyy-MM-dd HH:mm:ss' }})</div>
+            </div>
+            <hr width="70%" style="color: rgb(0, 60, 255);">
+          </div>
+          <div *ngIf="cart.cartItems.length > 2 && !shouldShowMore(cart.cartId)">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <button class="btn btn-link" (click)="toggleShowMore(cart.cartId)">Daha fazla göster</button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="shouldShowMore(cart.cartId)">
+            <div *ngFor="let item of cart.cartItems.slice(2)">
+              <div class="row">
+                <div class="col-md-3" >{{ item.outGoing }} </div>
+                <div class="col-md-1"><div class="ikon"><i class="fa-solid fa-arrow-right-long"></i></div></div>
+                <div class="col-md-3">{{ item.inComing }}</div>
+                <div class="col-md-4">({{ convertToDate(item.time) | date:'yyyy-MM-dd HH:mm:ss' }})</div>
+              </div>
+              <hr width="70%" style="color: rgb(0, 60, 255);">
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <button class="btn btn-link" (click)="toggleShowMore(cart.cartId)">Daha az göster</button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <button class="btn btn-primary" routerLink="/rezDetails/{{cart.cartId}}">Uçuş bilgileri</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

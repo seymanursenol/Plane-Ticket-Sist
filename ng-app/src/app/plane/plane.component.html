@@ -1,0 +1,127 @@
+<div class="all">
+  <p class="option d-inline-flex gap-1">
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample2">Uçuş ekle</button>
+   <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button> -->
+ </p>
+  <form #form(ngForm) (ngSubmit)="planeCreate(form)">
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            <div class="col mb-3">
+              <label for="outgoing" class="form-label">Kalkış Yeri</label>
+              <input [(ngModel)]="model.outgoing" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="outgoing" name="outgoing" >
+            </div>
+            <div class="col mb-3">
+              <label for="incoming" class="form-label">Varış Yeri</label>
+              <input [(ngModel)]="model.incoming" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="incoming">
+            </div>
+            <div class="col mb-3">
+              <label for="time" class="form-label">Tarih</label>
+              <input [(ngModel)]="model.time" [ngModelOptions]="{standalone: true}" type="datetime-local" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col mb-3">
+              <label for="ticketTotal" class="form-label">Bilet Sayısı</label>
+              <input [(ngModel)]="model.ticketTotal" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col mb-3">
+              <label for="price" class="form-label">Fiyat</label>
+              <input [(ngModel)]="model.price" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="buton">
+              <button type="submit" class="btn btn-success">Ekle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+ <div class="AllPlane mt-4">
+   <div class="container">
+     <div class="card mb-5" >
+       <div class="row">
+        <div class="input-group mb-3">
+          <input class="form-check-input mt-1" type="checkbox" [(ngModel)]="showCurrentOnly" (change)="getPlane()" aria-label="Checkbox for following text input">
+          <label class="ms-1" for="">Sadece güncel olanlar</label>
+        </div>
+
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <th scope="col">Kalkış Yeri</th>
+              <th scope="col">İniş Yeri</th>
+              <th scope="col">Fiyat</th>
+              <th scope="col">Bilet Sayısı</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let plane of planes" [ngClass]="{'.cancel-row': plane.planeState == 1}">
+              <input type="hidden" name="" value="{{plane.id}}">
+              <td>{{plane.outgoing}}</td>
+              <td>{{plane.incoming}}</td>
+              <td>{{plane.price}}</td>
+              <td>{{plane.ticketTotal}}</td>
+              <td>
+                <div *ngIf="plane.planeState == 0" class="row buton-update-delete">
+                  <div class="col-md-5">
+                    <button class="me-4 btn btn-primary" routerLink="/plane_edit/{{plane.id}}">Edit</button>
+                  </div>
+                  <div class="col-md-5">
+                    <form style="display: inline;" *ngIf="plane.id" (ngSubmit)="planeDelete(plane.id)" action="">
+                      <button type="submit" class="btn btn-danger">İptal</button>
+                    </form>
+                  </div>
+                </div>
+                <div *ngIf="plane.planeState == 1" class="cancel">
+                  <p>İptal Edildi</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+         <!-- <div class="col-md-6 outandin">
+           <div class="card-body row">
+             <div class="row">
+               <div class="col-md-4">Uçuş tarihi</div>
+               <div class="col"><p style="color: black; font-size: 15px; font-weight: 500; margin-left: -30%;">{{plane.time | date:'yyyy-MM-dd HH:mm'}}</p></div>
+             </div>
+             <div class="col" style="font-size: 20px;"><p>{{plane.outgoing}}</p></div>
+             <div class="col"><div class="ikon"><i class="fa-solid fa-arrow-right-long"></i></div></div>
+             <div class="col" style="font-size: 20px;"><p>{{plane.incoming}}</p></div>
+           </div>
+         </div>
+         <div class="col-md-3 date-time-ticket">
+           <div class="row" style="margin-left: 15%;">
+
+               <p style="color: rgba(0, 0, 0, 0.699); margin-top: 15%;">Fiyat: {{plane.price}} <i style="font-size: 12px;color: rgba(0, 0, 0, 0.528);" class="fa-solid fa-turkish-lira-sign"></i></p>
+               <p style="color: rgba(0, 0, 0, 0.699);">Bilet sayısı: {{plane.ticketTotal}}</p>
+           </div>
+         </div>
+         <div class="col">
+           <div class="row buton-update-delete"  style="margin-top: 10%;">
+            <div class="col-md-5">
+              <button class=" me-4 btn btn-primary" routerLink="/plane_edit/{{plane.id}}">Edit</button>
+            </div>
+             <div class="col-md-5">
+              <form style="display: inline;"  *ngIf="plane.id" (ngSubmit)="planeDelete(plane.id)" action="">
+                <button type="submit"  class=" btn btn-danger">İptal</button>
+               </form>
+             </div>
+
+
+           </div>
+
+         </div>-->
+       </div>
+
+
+     </div>
+   </div>
+ </div>
+</div>
+

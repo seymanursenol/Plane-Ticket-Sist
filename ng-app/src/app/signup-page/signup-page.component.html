@@ -1,0 +1,41 @@
+  <div class="allDiv">
+    <form #form(ngForm) (ngSubmit)="Register(form)" action="">
+      <div class="SignupDiv">
+        <!-- <div class="Img col">
+          <div class="images">
+            <img src="/assets/Images/Ucak3.png" width="300" alt="">
+          </div>
+        </div> -->
+
+        <div class="card">
+          <div class="card-body">
+            <div class="Inputs">
+              <div class="Icon">
+                <button class="btn buton"><i class="fa-solid fa-user"></i></button>
+              </div>
+              <h1 style="text-align: center;">Sign Up</h1>
+              <h5 style="text-align: center;">Lütfen gerekli yerleri doldurun.</h5>
+              <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="model.UserName" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Full Name" aria-label="UserName" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="model.Email" [ngModelOptions]="{standalone: true}" ngModel class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" [(ngModel)]="model.Password" [ngModelOptions]="{standalone: true}" ngModel class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+              </div>
+
+              <button type="submit" class="btn">Kayıt Ol</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+

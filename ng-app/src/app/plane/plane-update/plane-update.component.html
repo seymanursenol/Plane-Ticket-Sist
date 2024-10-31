@@ -1,0 +1,65 @@
+<div class="AllUpdate">
+  <h1>Plane Edit</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div  *ngIf="plane">
+        <form (ngSubmit)="updatePlane()">
+          <div class="row">
+
+            <div class="col">
+              <div class="card card-body">
+                <input type="hidden" name="{{plane.id}}" value="{{plane.id}}">
+                <div class="col mb-3">
+                  <label for="outgoing" class="form-label">Kalkış Yeri</label>
+                  <input [(ngModel)]="plane.outgoing" name="outgoing" type="text" class="form-control" id="outgoing">
+                </div>
+                <div class="col mb-3">
+                  <label for="incoming" class="form-label">Varış Yeri</label>
+                  <input [(ngModel)]="plane.incoming"  name="incoming" type="text" class="form-control" id="incoming">
+                </div>
+                <div class="col mb-3">
+                  <label for="time" class="form-label">Tarih</label>
+                  <input [(ngModel)]="plane.time" name="time" type="datetime-local" class="form-control" id="time">
+                </div>
+                <div class="col mb-3">
+                  <label for="ticketTotal" class="form-label">Bilet Sayısı</label>
+                  <input [(ngModel)]="plane.ticketTotal" name="ticketTotal" type="number" class="form-control" id="ticketTotal">
+                </div>
+                <div class="col mb-3">
+                  <label for="price" class="form-label">Fiyat</label>
+                  <input [(ngModel)]="plane.price" name="price" type="number" class="form-control" id="price">
+                </div>
+                <div class="buton">
+                  <button type="submit" class="btn btn-success">Güncelle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div *ngIf="plane" class="col-md-4 ticket">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <div>Uçuş tarihi</div>
+          <p style="color: black; font-size: 18px; font-weight: 500;">{{plane.time | date:'yyyy-MM-dd HH:mm'}}</p>
+          <div class="card-body row">
+            <div class="col" style="font-size: 20px;">
+              <p>{{plane.outgoing}}</p>
+            </div>
+            <div class="col">
+              <div class="ikon"><i class="fa-solid fa-arrow-right-long"></i></div>
+            </div>
+            <div class="col" style="font-size: 20px;">
+              <p>{{plane.incoming}}</p>
+            </div>
+            <p style="color: rgba(0, 0, 0, 0.699); margin-top: 10%;">Fiyat: {{plane.price}} <i style="font-size: 12px;color: rgba(0, 0, 0, 0.528);" class="fa-solid fa-turkish-lira-sign"></i></p>
+            <p style="color: rgba(0, 0, 0, 0.699);">Bilet sayısı: {{plane.ticketTotal}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

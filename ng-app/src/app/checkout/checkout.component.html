@@ -1,0 +1,83 @@
+<div class="content">
+  <div class="row cont">
+    <div class="check col">
+      <div class="card" style="padding: 2%;">
+        <div class="planeDetails">
+          <div *ngIf="plane" class="ticket mb-3">
+            <div class="card" >
+              <div class="card-body">
+                <div class="card-body row">
+                  <div class="col-md-3 text-center" style="font-size: 20px;">
+                    <p>{{plane.outgoing}}</p>
+                  </div>
+                  <div class="col-md-1 text-center">
+                    <div class="ikon"><i class="fa-solid fa-arrow-right-long"></i></div>
+                  </div>
+                  <div class="col-md-3 text-center" style="font-size: 20px;">
+                    <p>{{plane.incoming}}</p>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-7">
+                      <p style="color: rgb(77, 77, 77); font-size: 18px; font-weight: 500;">{{plane.time | date:'yyyy-MM-dd HH:mm'}}</p>
+                    </div>
+                    <div class="col-md-4">
+                      <p style="color: rgb(77, 77, 77); text-decoration: underline; font-size: 17px;">{{plane.price}}<i style="font-size: 12px;color: rgb(77, 77, 77);" class="fa-solid fa-turkish-lira-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form (ngSubmit)="checkTicket()">
+          <div class="card buy-card">
+            <div class="card-body">
+              <div class="buy-div">
+                <input type="hidden" name="cartId" value="0">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <input [(ngModel)]="model.UserName" type="text" name="UserName" class="form-control" placeholder="İsim Soyisim" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-4">
+                      <input [(ngModel)]="model.Phone" type="text" name="Phone" class="form-control" placeholder="Phone" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="col-md-4">
+                      <input [(ngModel)]="model.Email" type="text" name="Email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <h4>Ödeme Bilgileri</h4>
+                <div class="mt-2" style="width: 60%;">
+                  <input [(ngModel)]="model.CardName" type="text" name="CardName" class="form-control" placeholder="Cart Üzerindeki İsim" aria-describedby="basic-addon1">
+                </div>
+                <div class="mt-3" style="width: 60%;">
+                  <input [(ngModel)]="model.CardNumber" type="text" name="CardNumber" class="form-control" placeholder="CartNumarası" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="row mb-3 mt-3">
+                  <div class="col-md-2">
+                      <input [(ngModel)]="model.Year" type="text"  name="ExpirationMonth" class="form-control" placeholder="Ay" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="col-md-2">
+                      <input [(ngModel)]="model.Month" type="text"  name="ExpirationYear" class="form-control" placeholder="Yıl" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="col-md-2">
+                      <input [(ngModel)]="model.Cvc" type="text"  name="Cvc" class="form-control" placeholder="Cvc"  aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="mb-3">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Siparişi tamamla</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+

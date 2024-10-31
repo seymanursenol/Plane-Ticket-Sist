@@ -1,0 +1,110 @@
+.navbar{
+  background-color: #ececec7d;
+}
+.nav-underline{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  width: 200px;
+  height: auto;
+  margin-right: 50%;
+}
+mat-icon{
+  color: #ff8800;
+  font-size: 30px;
+}
+.alt-header .btn{
+  display: flex;
+  width: 10%;
+  margin-left: 5%;
+  padding-bottom: 5px;
+  position: relative;
+}
+.alt-header .btn .alt-h-logo{
+  flex: 1;
+}
+.alt-header .btn .alt-h-yazi{
+  flex: 1;
+  padding-top: 6%;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.alt-header .btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 130%;
+  height: 2px;
+  background-color: #ff8800; /* Pembe çizgi rengi */
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+  margin-right: 50%;
+}
+.alt-header .btn:hover::before{
+  transform: scaleX(0.5);
+}
+.alt-h-yazi a{
+  text-decoration: none;
+  color: black;
+}
+.alt-header2{
+  display: flex;
+}
+.userName{
+  font-size: 17px;
+  font-family: 'Times New Roman', Times, serif;
+  width: 30%;
+}
+.buton-bt{
+  margin-left: 20%;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  color: rgba(240, 248, 255, 0.538);
+  border-color: rgba(240, 248, 255, 0.538);
+}
+.alert-container {
+  position: fixed;
+  top: 56px; /* Navbar yüksekliği */
+  width: 100%;
+  z-index: 1050;
+}
+
+.alert {
+  margin: 0;
+  border-radius: 0;
+  text-align: center;
+}
+
+.alert.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.alert.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+/* .navbar{
+  padding-left: 20%;
+} */
+.container-fluid{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+

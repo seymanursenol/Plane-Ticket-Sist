@@ -1,0 +1,27 @@
+<div class="allDiv">
+  <form (ngSubmit)="Login(loginForm)" #loginForm="ngForm">
+    <div class="LoginDiv">
+      <div class="card">
+        <div class="card-body">
+          <div class="Inputs">
+            <div class="Icon">
+              <button class="btn buton"><i class="fa-solid fa-user"></i></button>
+            </div>
+            <h1 style="text-align: center;">Login</h1>
+            <h5 style="text-align: center;">Lütfen gerekli yerleri doldurun.</h5>
+            <input type="hidden" name="">
+            <div class="input-group mb-3" [(ngModel)]="model.UserName">
+              <input type="text" [(ngModel)]="model.Email" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" [(ngModel)]="model.Password" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            </div>
+            <button type="submit" class="btn mb-3">Giriş</button>
+            <button type="button" routerLink="/signup-page" class="btn">Kayıt Ol</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="container mt-4" *ngIf="cart">
+    <input type="hidden" name="" [value]="cart.cartId">
+    <!-- <h3>Bilet Sahibi</h3> -->
+      <label for="" *ngFor="let user of cart.userItemsModels">{{ user.userName }}</label>
+      <hr>
+    <h3>Uçuş Bilgileri</h3>
+    <table class="table table-bordered">
+      <thead class="table-success">
+        <tr>
+          <th>Kalkış</th>
+          <th>İniş</th>
+          <th>Tarih</th>
+          <th>Fiyat</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart.cartItems">
+          <td>{{ item.outGoing }}</td>
+          <td>{{ item.inComing }}</td>
+          <td>{{ convertToDate(item.time) | date:'dd-MM-yyyy HH:mm' }}</td>
+          <td>{{ item.price }}</td>
+          <td>
+            <form style="display: inline;" (ngSubmit)="DeleteCartDetails(item)" action="">
+              <button type="submit"  class=" btn btn-danger">İptal</button>
+             </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

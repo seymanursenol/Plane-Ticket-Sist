@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ng-server", "ng-server.csproj", "{FEC17756-8E3D-49F9-BAFF-74E0DC199369}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{3C621F9A-EC4C-4EAC-A7A8-C0F2B3472255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEC17756-8E3D-49F9-BAFF-74E0DC199369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC17756-8E3D-49F9-BAFF-74E0DC199369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC17756-8E3D-49F9-BAFF-74E0DC199369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC17756-8E3D-49F9-BAFF-74E0DC199369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C621F9A-EC4C-4EAC-A7A8-C0F2B3472255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C621F9A-EC4C-4EAC-A7A8-C0F2B3472255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C621F9A-EC4C-4EAC-A7A8-C0F2B3472255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C621F9A-EC4C-4EAC-A7A8-C0F2B3472255}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C87BE12-C036-462A-A992-3B9628F7298A}
+	EndGlobalSection
+EndGlobal

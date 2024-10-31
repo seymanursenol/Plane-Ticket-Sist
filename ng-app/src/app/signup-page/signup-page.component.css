@@ -1,0 +1,49 @@
+.allDiv{
+  background-image: url('/assets/Images/sky.jpg');
+  /* Tam ekran yapmak için */
+  margin-top: 3%;
+  height: 95%;
+  width: 100%;
+
+  /* Arka plan resmi */
+
+  /* Arka plan resmini ortala ve yeniden boyutlandır */
+  background-position: center;
+  background-size: cover;
+
+  /* Opsiyonel: Sayfa içeriği üzerine bir katman eklemek için */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.SignupDiv{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.Inputs{
+  margin-top: 10%;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.btn{
+  width: 100%;
+  padding: 1%;
+  font-size: 15px;
+  background-color: rgba(176, 0, 207, 0.973);
+  color: white;
+}
+.buton{
+  background-color: rgba(176, 0, 207, 0.973);
+  padding: 5%;
+  width: 25%;
+  border-radius: 50%;
+  font-size: 30px;
+  color: white;
+  margin-left: 37%;
+  margin-bottom: 2%;
+}

@@ -1,0 +1,24 @@
+<!-- cart.component.html -->
+<div *ngIf="userTokenData">
+  <h2>Sepet Bilgileri</h2>
+  <p><strong>Sepet ID:</strong> {{ userTokenData.cartId }}</p>
+
+  <h3>Sepetteki Ürünler:</h3>
+  <ul>
+    <li *ngFor="let item of userTokenData.cartItems">
+      <p><strong>Bilet ID:</strong> {{ item.cartItemId }}</p>
+      <p><strong>Gidiş:</strong> {{ item.outGoing }}</p>
+      <p><strong>Dönüş:</strong> {{ item.inComing }}</p>
+      <p><strong>Fiyat:</strong> {{ item.price }} TL</p>
+      <p><strong>Zaman:</strong> {{ item.time }}</p>
+      <hr>
+    </li>
+  </ul>
+</div>
+<h4><strong>Toplam Fiyat:</strong> {{ userTokenData.totalPrice }} TL</h4>
+
+<div *ngIf="!userTokenData">
+  <p>Sepet bilgileri alınamadı.</p>
+</div>
+
+

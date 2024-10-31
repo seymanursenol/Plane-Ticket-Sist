@@ -1,0 +1,33 @@
+.Container {
+  justify-content: center;
+  margin-top: 5%;
+  scroll-behavior: smooth;
+
+}
+.container2 {
+  width: 90%; /* Genişliği ayarlayabilirsiniz */
+  height: 600px; /* Yüksekliği ayarlayabilirsiniz */
+  background-image: url('/assets/Images/Ucak5.jpg'); /* Arka plan resmi */
+  background-size: cover; /* Resmi, div'in tamamını kaplayacak şekilde ölçeklendirir */
+  background-position: center 50%;
+  background-repeat: no-repeat; /* Resmin tekrarlanmamasını sağlar */
+  margin-left: 5%;
+}
+.rez{
+  padding: 7%;
+}
+
+select{
+  font-size: 15px;
+}
+.AllCont{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.AllPlane .card{
+  background-color: rgba(227, 227, 227, 0.202);
+  padding: 3%;
+  width: 70%;
+  margin-left: 15%;
+}
+
+

@@ -1,0 +1,30 @@
+<nav class="navbar  fixed-top">
+  <div class="container-fluid">
+    <ul class="nav nav-underline">
+      <li class="nav-item me-5">
+        <a class="nav-link" href="#" style="color: rgb(0, 0, 0, 0.675); font-family:'Times New Roman', Times, serif; font-size: 15px;" routerLink="/">Anasayfa</a>
+
+      </li>
+      <li class="nav-item me-5">
+        <a *ngIf="userProfile" class="nav-link" href="#" style="color: rgb(0, 0, 0, 0.675); font-family:'Times New Roman', Times, serif; font-size: 15px;" routerLink="/rezerve">Bilet Al</a>
+      </li>
+      <li class="nav-item me-5" *ngIf="userProfile">
+        <a *ngIf="LoggenAdmin" class="nav-link" href="#" style="color: rgb(0, 0, 0, 0.675); font-family:'Times New Roman', Times, serif; font-size: 15px;" routerLink="/allRez">Rezervasyonlar</a>
+      </li>
+      <li class="nav-item me-5"  *ngIf="userProfile">
+        <a  *ngIf="LoggenAdmin" class="nav-link" href="#" style="color: rgba(0, 0, 0, 0.675); font-family:'Times New Roman', Times, serif; font-size: 15px;" routerLink="/planes">Uçuşlar</a>
+      </li>
+      <li class="nav-item li-btn">
+        <span *ngIf="userProfile" class="welcome me-3" style="color: rgb(0, 0, 0); font-family: 'Times New Roman', Times, serif; font-size: 17px;">Welcome {{userProfile.username}}!</span>
+      <button  *ngIf="userProfile" type="button" (click)="logout()" class="btn btn-outline-warning">Çıkış</button>
+      <button *ngIf="!userProfile" type="button" routerLink="/login-page" class="btn btn-outline-primary">Giriş</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="alert-container" *ngIf="message">
+  <div class="alert" [ngClass]="messageColor">
+    {{ message }}
+  </div>
+</div>
+

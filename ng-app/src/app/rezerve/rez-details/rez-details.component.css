@@ -1,0 +1,18 @@
+.content, h2,h3{
+  font-family: 'Times New Roman', serif;
+}
+.content{
+  margin-top: 7%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+table{
+  text-align: center;
+  font-size: 16px;
+}
+label{
+  font-size: 25px;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.757);
+}
